@@ -169,7 +169,7 @@
 			<div class="tab" class:active={showGraph === 'volume'}>Volume</div>
 		</div>
 		<div on:click={() => switchTab('balance')}>
-			<div class="tab" class:active={showGraph === 'balance'}>In Juicebox</div>
+			<div class="tab" class:active={showGraph === 'balance'}>In DAO Treasury</div>
 		</div>
 	</div>
 	<div class="dropdown">
