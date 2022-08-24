@@ -88,11 +88,11 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 				<a href="/mint?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Mint a Tile</a>
 			</div>
 		</div> -->
-		{#if commitHash}
+		<!-- {#if commitHash}
 			<div class="small">
 				<a href="https://github.com/tankbottoms/tiles-wtf-gallery/commit/{commitHash.split(/\s+/)[0]}">commit:{commitHash.split(/\s+/)[0].slice(0, 15)}</a>
 			</div>
-		{/if}
+		{/if} -->
 	</section>
 	<div class="socialIcons" target="_blank">
 		<a href="https://twitter.com/AmpliFiDAO">
