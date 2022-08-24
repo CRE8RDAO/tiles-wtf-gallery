@@ -67,7 +67,7 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 	<section>
 		<h1>
 			<a class="heading" href="/history?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
-				AmpliFi DAO Fundraise is live selling 5% to total $AMP
+				AmpliFi DAO Fundraise is live selling 6% to total $AMP
 			</a>
 		</h1>
 		<p>We're building the web3 clickbank minus the dick pills.</p>
