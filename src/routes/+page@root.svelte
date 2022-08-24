@@ -81,7 +81,7 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 
 		<!-- <a href="/wtf?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Wtf</a> -->
 		<a href="/dao?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Fundraise</a>
-		<a href="/faq?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Faq</a>
+		<a href="https://amplifi.cre8r.vip/#/campaigns/AMPLIFI/amplifi-juicebox">AmpliFi Fundraiser Referral Program</a>
 		<!-- <a href="/seizures?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Seizures</a> -->
 		<!-- <div class="group">
 			<div>
