@@ -67,10 +67,11 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 	<section>
 		<h1>
 			<a class="heading" href="/history?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
-				AmpliFi DAO
+				AmpliFi DAO Fundraise is live selling 5% to total $AMP
 			</a>
 		</h1>
-		<p>We're building a web3 clickbank</p>
+		<p>We're building the web3 clickbank minus the dick pills.</p>
+		<p>Our fundraise has it's own referral program using AmpliFI. You can earn $ETH + $veAMP for helping us spread the word.</p>
 		<!-- <p>
 			<a
 				href="https://github.com/tankbottoms/tiles-on-chain/blob/main/contracts/components/TileContentProvider.sol"
