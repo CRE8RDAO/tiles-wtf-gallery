@@ -218,7 +218,7 @@
 		border: none;
 		background: none;
 		cursor: pointer;
-		border-bottom: 3px solid gold;
+		border-bottom: 3px solid #ff3700;
 		padding: 0px;
 		margin-top: 20px;
 	}

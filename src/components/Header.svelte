@@ -74,7 +74,7 @@
 		<a class="logo-wrapper" href="/?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
 			<img src="/favicon.svg" alt="Logo" />
 		</a>
-		<a
+		<!-- <a
 			class="primary-text"
 			href="/history/{$connectedAccount || ''}?{$readNetwork
 				? `network=${$readNetwork?.alias}`
@@ -85,14 +85,14 @@
 			{:else}
 				{count}/{totalCount} Minted
 			{/if}
-		</a>
-		<div class="price">
+		</a> -->
+		<!-- <div class="price">
 			{#if innerWidth < 650}
 				//&nbsp;{price}
 			{:else}
 				//&nbsp;Current price: {price} ETH
 			{/if}
-		</div>
+		</div> -->
 	</div>
 
 	<div class="right">
@@ -179,7 +179,7 @@
 		text-decoration: none;
 		position: relative;
 		&.primary-text {
-			border-bottom: 3px solid gold;
+			border-bottom: 3px solid #ff3700;
 			transform: translateY(1px);
 			margin: 0px 10px;
 			&:hover {

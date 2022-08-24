@@ -51,7 +51,7 @@
 		--background-success: #0f8534;
 		--background-warn: #bf7c08;
 		--background-failure: #ff4524;
-		--background-brand-primary: #f5a312;
+		--background-brand-primary: #ff3700;
 		--background-brand-secondary: #ffecbb;
 		--background-action-primary: #18b4c7;
 		--background-action-secondary: #32c8db44;
@@ -64,11 +64,11 @@
 		--text-success: #0f8534;
 		--text-warn: #bf7c08;
 		--text-failure: #ff4524;
-		--text-header: #f5a312;
+		--text-header: #ff3700;
 		--text-action-primary: #18b4c7;
 		--text-action-secondary: #18b4c7;
 		--text-action-highlight: #25c4d8;
-		--text-brand-primary: #f5a312;
+		--text-brand-primary: #ff3700;
 		--text-brand-secondary: #ffecbb;
 		--text-over-brand-primary: #fff;
 		--text-over-brand-secondary: #000;
@@ -88,7 +88,7 @@
 		--icon-failure: #ff4524;
 		--icon-action-primary: #18b4c7;
 		--icon-action-secondary: #18b4c7;
-		--icon-brand-primary: #f5a312;
+		--icon-brand-primary: #ff3700;
 		--icon-brand-secondary: #ffecbb;
 		--icon-over-brand-primary: #fff;
 		--icon-over-brand-secondary: #000;

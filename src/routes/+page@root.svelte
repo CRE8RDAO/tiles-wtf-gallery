@@ -57,37 +57,37 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 		getCommitHash();
 	});
 
-	let innerWidth = browser ? window.innerWidth : 0;
+	 let innerWidth = browser ? window.innerWidth : 0;
 </script>
 
 <svelte:window bind:innerWidth on:mousemove={handleMove} />
 
 <main class:mobile={innerWidth < 650}>
-	<Tile {address} {animate} bigger />
+	<!-- <Tile {address} {animate} bigger /> -->
 	<section>
 		<h1>
 			<a class="heading" href="/history?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
-				Infinite (∞) Tiles v2
+				AmpliFi DAO
 			</a>
 		</h1>
-		<p>Generated from any Ethereum address</p>
-		<p>
+		<p>We're building a web3 clickbank</p>
+		<!-- <p>
 			<a
 				href="https://github.com/tankbottoms/tiles-on-chain/blob/main/contracts/components/TileContentProvider.sol"
 				target="_blank">Fully on-chain Solidity generated artwork</a
 			>
-		</p>
-		<p>Each is unique & objectively rare</p>
+		</p> -->
+		<!-- <p>Each is unique & objectively rare</p> -->
 
-		<a href="/wtf?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Wtf</a>
-		<a href="/dao?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Juicebox</a>
+		<!-- <a href="/wtf?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Wtf</a> -->
+		<a href="/dao?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Fundraise</a>
 		<a href="/faq?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Faq</a>
-		<a href="/seizures?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Seizures</a>
-		<div class="group">
+		<!-- <a href="/seizures?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Seizures</a> -->
+		<!-- <div class="group">
 			<div>
 				<a href="/mint?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Mint a Tile</a>
 			</div>
-		</div>
+		</div> -->
 		{#if commitHash}
 			<div class="small">
 				<a href="https://github.com/tankbottoms/tiles-wtf-gallery/commit/{commitHash.split(/\s+/)[0]}">commit:{commitHash.split(/\s+/)[0].slice(0, 15)}</a>
@@ -95,13 +95,13 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 		{/if}
 	</section>
 	<div class="socialIcons" target="_blank">
-		<a href="https://twitter.com/Tile_DAO">
+		<a href="https://twitter.com/AmpliFiDAO">
 			<Icon name="twitter" />
 		</a>
-		<a href="https://discord.gg/U3fMydKj4J" target="_blank">
+		<a href="https://discord.gg/KumYdmRw" target="_blank">
 			<Icon name="discord" />
 		</a>
-		<a href="https://github.com/tankbottoms/tiles-on-chain" target="_blank">
+		<a href="https://github.com/CRE8RDAO/amplifi-interface" target="_blank">
 			<Icon name="github" style="width: 1rem" />
 		</a>
 	</div>
@@ -129,7 +129,7 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 			color: black;
 			text-decoration: none;
 			position: relative;
-			border-bottom: 3px solid gold;
+			border-bottom: 3px solid #ff3700;
 			margin: 0px 10px;
 		}
 
