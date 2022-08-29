@@ -13,6 +13,7 @@
 	import Issue from '$juicebox/components/Issue.svelte';
 	import Modal from '$juicebox/components/Modal.svelte';
 	import Paid from '$juicebox/components/Paid.svelte';
+	import JoinProgram from '$juicebox/components/JoinProgram.svelte';
 	import Store from '$utils/Store';
 	import { readContract, readContractByAddress } from '$juicebox/utils/web3/contractReader';
 	import { V2ContractName } from '$juicebox/models/v2/contracts';
@@ -518,6 +519,7 @@
 		{:else}
 			<div>
 				<Head {loadingMetadata} {loading} />
+				<JoinProgram {loading} />
 				<Paid {loadingVolume} {loadingInTreasury} {loadingDistributed} />
 				<div class="row">
 					<Details {loadingMetadata} {loadingFindingCycle} {loadingUserTokenBalance} />
