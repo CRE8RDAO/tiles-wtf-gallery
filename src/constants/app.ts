@@ -8,7 +8,7 @@ export const APP_CONFIG = {
 	contract_tile_tier_size: 16,
 	contract_rinkeby: '0x069e85D4F1010DD961897dC8C095FBB5FF297434',
 	project_mainnet: 149,
-	project_rinkeby: 4655,
+	project_rinkeby: 4662,
 	gnosis_mainnet: '0x4493287882f75dFFcdB40FD41d38d6308Fb8c181',
 	contract_mainnet_v1: '0x64931F06d3266049Bf0195346973762E6996D764'
 };
