@@ -523,4 +523,24 @@ v1.3.0
 		max-height: calc(100vh - 4rem);
 		overflow: scroll;
 	}
+
+	.inner-content::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	.inner-content::-webkit-scrollbar-track {
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+
+	.inner-content::-webkit-scrollbar-thumb {
+		opacity: 0.1;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		background-color: #c0c1c1;
+	}
+
+	.inner-content::-webkit-scrollbar-thumb:hover {
+		cursor: default;
+	}
 </style>

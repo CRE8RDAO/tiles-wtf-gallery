@@ -6,7 +6,7 @@
 	import { browser } from '$app/env';
 	import Tile from '$components/Tile.svelte';
 	import Icon from '$juicebox/components/Icon.svelte';
-import { splitPercentFrom } from '$juicebox/utils/v2/math';
+	import { splitPercentFrom } from '$juicebox/utils/v2/math';
 
 	const randomAddresses = generateRandomAddresses(25);
 
@@ -57,7 +57,7 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 		getCommitHash();
 	});
 
-	 let innerWidth = browser ? window.innerWidth : 0;
+	let innerWidth = browser ? window.innerWidth : 0;
 </script>
 
 <svelte:window bind:innerWidth on:mousemove={handleMove} />
@@ -66,34 +66,18 @@ import { splitPercentFrom } from '$juicebox/utils/v2/math';
 	<!-- <Tile {address} {animate} bigger /> -->
 	<section>
 		<h1>
-			<a class="heading" href="/history?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
+			<a class="heading" href="/dao?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
 				AmpliFi DAO Fundraise is live selling 6% to total $AMP
 			</a>
 		</h1>
 		<p>We're building the web3 clickbank minus the dick pills.</p>
-		<p>Our fundraise has it's own referral program using AmpliFI. You can earn $ETH + $veAMP for helping us spread the word.</p>
-		<!-- <p>
-			<a
-				href="https://github.com/tankbottoms/tiles-on-chain/blob/main/contracts/components/TileContentProvider.sol"
-				target="_blank">Fully on-chain Solidity generated artwork</a
-			>
-		</p> -->
-		<!-- <p>Each is unique & objectively rare</p> -->
-
-		<!-- <a href="/wtf?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Wtf</a> -->
-		<a href="/dao?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Fundraise</a>
-		<a href="https://amplifi.cre8r.vip/#/campaigns/AMPLIFI/amplifi-juicebox">AmpliFi Fundraiser Referral Program</a>
-		<!-- <a href="/seizures?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Seizures</a> -->
-		<!-- <div class="group">
-			<div>
-				<a href="/mint?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">Mint a Tile</a>
-			</div>
-		</div> -->
-		<!-- {#if commitHash}
-			<div class="small">
-				<a href="https://github.com/tankbottoms/tiles-wtf-gallery/commit/{commitHash.split(/\s+/)[0]}">commit:{commitHash.split(/\s+/)[0].slice(0, 15)}</a>
-			</div>
-		{/if} -->
+		<p>
+			Our fundraise has it's own referral program using AmpliFI. You can earn $ETH + $veAMP for
+			helping us spread the word.
+		</p>
+		<a href="https://amplifi.cre8r.vip/#/campaigns/AMPLIFI/amplifi-juicebox"
+			>AmpliFi Fundraiser Referral Program</a
+		>
 	</section>
 	<div class="socialIcons" target="_blank">
 		<a href="https://twitter.com/AmpliFiDAO">
