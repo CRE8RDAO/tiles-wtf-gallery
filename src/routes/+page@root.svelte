@@ -137,23 +137,6 @@
 			align-items: center;
 			gap: 10px;
 		}
-		.menu {
-			position: fixed;
-			bottom: 0px;
-			right: 0px;
-			padding: 10px;
-			font-weight: bold;
-			font-size: 1rem;
-		}
-		.group {
-			margin-top: 30px;
-			height: 60px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			margin-bottom: 20px;
-			font-weight: 600;
-		}
 		&.mobile {
 			display: flex;
 			flex-direction: column;
@@ -170,8 +153,5 @@
 				font-size: 10px;
 			}
 		}
-	}
-	.small {
-		font-size: 0.6rem;
 	}
 </style>

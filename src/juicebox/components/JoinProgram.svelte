@@ -45,7 +45,7 @@
 		<div class="border">
 			<header>
 				<InfoSpaceBetween>
-					<h2 slot="left" class="linearText">Looks like you got referred</h2>
+					<h2 slot="left" class="linearText">You got AMPed!</h2>
 				</InfoSpaceBetween>
 			</header>
 			<div class="row">
