@@ -1,7 +1,7 @@
 import { BigNumber, utils } from 'ethers';
 
 export const APP_CONFIG = {
-	contract_mainnet: '0x069e85D4F1010DD961897dC8C095FBB5FF297434',
+	contract_mainnet: '0x069e85D4F1010DD961897dC8C095FBB5FF297434', //we dont need or use this its the tile dao NFT contract NOT Juicebox
 	contract_tiles_content_provider: '0x4F0Fba0652E61cD1Ec62E65e58c053F93b2D079F',
 	contract_base_price: BigNumber.from(utils.parseEther('0.0001')),
 	contract_tile_multiplier: 2,

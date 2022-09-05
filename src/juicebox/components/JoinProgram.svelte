@@ -46,6 +46,7 @@
 			<header>
 				<InfoSpaceBetween>
 					<h2 slot="left" class="linearText">You got AMPed!</h2>
+					<p>You came here via an AmpliFi Link!</p>
 				</InfoSpaceBetween>
 			</header>
 			<div class="row">
