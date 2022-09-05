@@ -104,7 +104,7 @@
 
 	onMount(async () => {
 		if (payButton === '') {
-			payButton = 'Pay';
+			payButton = 'GET $AMP';
 		}
 		converter = await getCurrencyConverter();
 
@@ -176,7 +176,7 @@
 	</div>
 	<div class="stacked">
 		<!-- TODO need input from pay button, pass in onClick -->
-		<Button {disabled} size="md" on:click={onPay}>{payButton || 'Pay'}</Button>
+		<Button {disabled} size="md" on:click={onPay}>{payButton || 'GET $AMP'}</Button>
 		{#if currency.eq(V2_CURRENCY_USD)}
 			<small>Paid as <ETH />{formattedETHAmount}</small>
 		{/if}

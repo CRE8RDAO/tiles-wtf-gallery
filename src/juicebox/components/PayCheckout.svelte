@@ -17,7 +17,7 @@
 	import UploadField from './UploadField.svelte';
 	import Button from './Button.svelte';
 	import Checkbox from './Checkbox.svelte';
-	import { bind, openModal } from './Modal.svelte';
+	import { bind, openModal, closeModal } from './Modal.svelte';
 	import PendingTransaction from './PendingTransaction.svelte';
 	import { writeContract } from '$juicebox/utils/web3/contractReader';
 	import { ETH_TOKEN_ADDRESS } from '$juicebox/constants/v2/juiceboxTokens';
@@ -27,6 +27,8 @@
 	import Textarea from './Textarea.svelte';
 	import Expandable from './Expandable.svelte';
 	import { startConfetti } from '$utils/confetti';
+	import { isReferred } from '$stores/referred';
+	import ContributionThanks from './ContributionThanks.svelte';
 
 	const projectContext = getContext('PROJECT') as Store<V2ProjectContextType>;
 
@@ -87,10 +89,16 @@
 				})
 			);
 			await txnResponse.wait();
+			isReferred.set(false);
 			startConfetti();
 		} catch (error) {
 			console.error(error);
 		}
+	}
+
+	async function payProjectAndSayThanks() {
+		await payProject();
+		setTimeout(() => openModal(bind(ContributionThanks, { click: closeModal })), 2000);
 	}
 
 	onMount(() => {
@@ -120,13 +128,11 @@
 </script>
 
 <main>
-	<h3><Trans>Pay {projectName}</Trans></h3>
+	<h3><Trans>Get $AMP</Trans></h3>
 	{#if riskCount}
 		<InfoBox>
-			Paying {projectName} is not an investment — it's a way to support the project. {projectName} determines
-			any value or utility of the tokens you receive. By continuing you acknowledge that you have read
-			and understood the
-			<a href="https://info.juicebox.money/tos" target="_blank">Juicebox's Terms of Service.</a>
+			Getting $AMP is an investment — it's your way to become an early supporter of the project and
+			earn with it.
 		</InfoBox>
 	{/if}
 	<br />
@@ -203,7 +209,7 @@
 </main>
 <div class="right buttons">
 	<Button on:click={close} type="secondary" size="md">Close</Button>
-	<Button on:click={payProject} type="primary" size="md">Pay</Button>
+	<Button on:click={payProjectAndSayThanks} type="primary" size="md">GET $AMP</Button>
 </div>
 
 <style>

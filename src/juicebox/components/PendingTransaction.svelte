@@ -3,7 +3,6 @@
 	import Trans from './Trans.svelte';
 	import type { ContractTransaction } from 'ethers';
 	import Icon from './Icon.svelte';
-	import { generateRandomAddresses, generateTile } from '$tiles/tilesStandalone';
 	import type { UpdateNotification } from 'bnc-notify';
 	import { createCustomNotification } from '$utils/notification';
 	import Loading from './Loading.svelte';
@@ -13,19 +12,11 @@
 	export let close: () => void;
 
 	let errorMessage = '';
-	let tile = '';
 	let interval: NodeJS.Timeout;
 
 	onMount(async () => {
 		await new Promise((r) => setTimeout(r, 50));
 		try {
-			const addresses = generateRandomAddresses(25);
-			let i = 0;
-			tile = generateTile(addresses[i++ % addresses.length]);
-			setInterval(() => {
-				tile = generateTile(addresses[i++ % addresses.length]);
-			}, 750);
-
 			let update: UpdateNotification;
 			try {
 				const { update: _update } = createCustomNotification({
@@ -64,14 +55,6 @@
 			</h2>
 			<p class="error">{errorMessage}</p>
 		{:else}
-			{#if tile}
-				<div class="tile">
-					<div>
-						{@html tile}
-					</div>
-				</div>
-			{/if}
-			<br />
 			<div class="row">
 				<Loading
 					size={16}
@@ -102,15 +85,6 @@
 	div {
 		max-width: 250px;
 		text-align: center;
-	}
-	.tile {
-		display: flex;
-		justify-content: center;
-	}
-	.tile :global(svg) {
-		max-width: 200px;
-		max-height: 200px;
-		aspect-ratio: 1 / 1;
 	}
 	.row {
 		display: flex;

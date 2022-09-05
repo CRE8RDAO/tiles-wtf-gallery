@@ -5,6 +5,7 @@
 	import Icon from './Icon.svelte';
 	import InfoSpaceBetween from './InfoSpaceBetween.svelte';
 	import type { V2ProjectContextType } from '$juicebox/models/project-type';
+	import { isReferred } from '$stores/referred';
 
 	const project = getContext('PROJECT') as Store<V2ProjectContextType>;
 
@@ -30,16 +31,20 @@
 		return subname;
 	}
 
-	//populates urlParamsComing with terms in the window location
-	Object.keys(urlParamsComing).forEach((name) => {
-		const subname = getUrlParameter(name);
-		if (subname) {
-			urlParamsComing[name] = subname;
+	onMount(() => {
+		Object.keys(urlParamsComing).forEach((name) => {
+			const subname = getUrlParameter(name);
+			if (subname) {
+				urlParamsComing[name] = subname;
+			}
+		});
+		if (urlParamsComing.utm_source === 'AMPLIFI') {
+			isReferred.set(true);
 		}
 	});
 </script>
 
-{#if urlParamsComing.utm_source === 'AMPLIFI'}
+{#if $isReferred}
 	<section class="rowLeft">
 		<div class="border">
 			<header>
@@ -111,10 +116,10 @@
 						<div class="infoContainer">
 							<div>deposits ETH to Juicebox</div>
 						</div>
-						<div>AND</div>
+						<!-- <div>AND</div>
 						<div class="infoContainer">
 							<div>payouts happen monthly</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
