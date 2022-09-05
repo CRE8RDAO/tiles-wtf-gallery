@@ -85,7 +85,7 @@
 							target="_blank"
 							rel="noreferrer noopenerrer"
 						>
-							Become an AmpliFi affiliate
+							Become an AmpliFi Affiliate
 						</a>
 					</div>
 				</InfoSpaceBetween>
