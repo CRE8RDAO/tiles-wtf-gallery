@@ -1,69 +1,14 @@
 <script lang="ts">
-	import { APP_CONFIG } from '$constants/app';
-	import { generateRandomAddresses } from '$tiles/tilesStandalone';
-	import { onMount } from 'svelte';
 	import { readNetwork } from '$stores/web3';
 	import { browser } from '$app/env';
-	import Tile from '$components/Tile.svelte';
 	import Icon from '$juicebox/components/Icon.svelte';
-	import { splitPercentFrom } from '$juicebox/utils/v2/math';
-
-	const randomAddresses = generateRandomAddresses(25);
-
-	let address = randomAddresses[0];
-	let animate = false;
-	let mouseLastMoved = Date.now();
-
-	let currentTile = 1;
-	let timer;
-
-	let commitHash = '';
-
-	async function getCommitHash() {
-		const response = await fetch('/commit-hash.txt');
-		if (response.ok) {
-			const text = await response.text();
-			commitHash = text;
-		} else {
-			commitHash = '';
-		}
-	}
-
-	function setAddressCarousel() {
-		timer = setInterval(() => {
-			address = randomAddresses[currentTile % 10];
-			currentTile++;
-		}, 1500);
-	}
-
-	function handleMove() {
-		if (animate) {
-			setAddressCarousel();
-		}
-		animate = false;
-		mouseLastMoved = Date.now();
-	}
-
-	function checkAnimationState() {
-		if (mouseLastMoved + 4000 < Date.now()) {
-			animate = true;
-			clearTimeout(timer);
-		}
-	}
-
-	onMount(() => {
-		setAddressCarousel();
-		setInterval(() => checkAnimationState(), 1000);
-		getCommitHash();
-	});
 
 	let innerWidth = browser ? window.innerWidth : 0;
 </script>
 
-<svelte:window bind:innerWidth on:mousemove={handleMove} />
+<svelte:window bind:innerWidth />
 
 <main class:mobile={innerWidth < 650}>
-	<!-- <Tile {address} {animate} bigger /> -->
 	<section>
 		<h1>
 			<a class="heading" href="/dao?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">

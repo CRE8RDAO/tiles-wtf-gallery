@@ -503,7 +503,6 @@
 	{/if}
 </svelte:head>
 
-
 <section>
 	<div class="content">
 		{#if issue}
@@ -517,7 +516,7 @@
 		{:else}
 			<div>
 				<Head {loadingMetadata} {loading} />
-				<JoinProgram {loading} />
+				<JoinProgram />
 				<Paid {loadingVolume} {loadingInTreasury} {loadingDistributed} />
 				<div class="row">
 					<Details {loadingMetadata} {loadingFindingCycle} {loadingUserTokenBalance} />

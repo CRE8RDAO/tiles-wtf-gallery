@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getContext, onMount } from 'svelte';
 	import {
 		web3Connect,
 		web3Disconnect,
@@ -9,49 +8,7 @@
 	} from '$stores/web3';
 	import { getTruncatedAddress } from '$juicebox/components/Address.svelte';
 	import { blocknativeNetworks } from '$juicebox/constants/networks';
-	import { getTilePrice } from '$utils/tiles';
-	import { TILE_BASE_PRICE, TILE_MULTIPLIER, TILE_TIER_SIZE } from '$constants/tile';
-	import { formatEther } from 'ethers/lib/utils.js';
-	import type Store from '$utils/Store';
-	import type { ethers } from 'ethers';
 	import EnsOrAddress from '$juicebox/components/EnsOrAddress.svelte';
-
-	const grabHistory = getContext('GRAB_HISTORY_STORE') as Store<{
-		loading: boolean;
-		transactions: ethers.providers.TransactionResponse[];
-		grabHistory: GrabHistoryItem[];
-	}>;
-
-	let count = '0';
-	let totalCount = '0';
-	let price = '0.0000';
-
-	onMount(async () => {
-		grabHistory.subscribe(async ({ grabHistory }) => {
-			try {
-				totalCount = grabHistory?.length?.toString();
-				count = grabHistory
-					.filter((item) => item.caller?.toLowerCase() === $connectedAccount?.toLowerCase())
-					?.length?.toString();
-				console.log(`totalSupply count: ${count}`);
-			} catch (e: any) {
-				console.error(`subscription error: ${e}`);
-				console.error(e.message);
-			}
-		});
-
-		readNetwork.subscribe(async () => {
-			try {
-				price = formatEther((await getTilePrice())?.toString() || '0');
-				console.log(`tile base price: ${TILE_BASE_PRICE}`);
-				console.log(`tile multiplier: ${TILE_MULTIPLIER}`);
-				console.log(`tile tier size: ${TILE_TIER_SIZE}`);
-				console.log(`tile price:`, price);
-			} catch (e: any) {
-				console.error(e.message);
-			}
-		});
-	});
 
 	let buttonElement: HTMLElement;
 	let dropdownOpened = false;
@@ -74,25 +31,6 @@
 		<a class="logo-wrapper" href="/?{$readNetwork ? `network=${$readNetwork?.alias}` : ''}">
 			<img src="/favicon.svg" alt="Logo" />
 		</a>
-		<!-- <a
-			class="primary-text"
-			href="/history/{$connectedAccount || ''}?{$readNetwork
-				? `network=${$readNetwork?.alias}`
-				: ''}"
-		>
-			{#if innerWidth < 650}
-				{count}/{totalCount}
-			{:else}
-				{count}/{totalCount} Minted
-			{/if}
-		</a> -->
-		<!-- <div class="price">
-			{#if innerWidth < 650}
-				//&nbsp;{price}
-			{:else}
-				//&nbsp;Current price: {price} ETH
-			{/if}
-		</div> -->
 	</div>
 
 	<div class="right">
@@ -178,14 +116,6 @@
 		color: black;
 		text-decoration: none;
 		position: relative;
-		&.primary-text {
-			border-bottom: 3px solid #ff3700;
-			transform: translateY(1px);
-			margin: 0px 10px;
-			&:hover {
-				border-bottom: 3px solid black;
-			}
-		}
 	}
 
 	.right {

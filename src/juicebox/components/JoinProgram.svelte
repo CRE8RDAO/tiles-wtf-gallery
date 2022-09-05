@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { getContext, onMount } from 'svelte';
+	import EnsOrAddress from './EnsOrAddress.svelte';
 	import type Store from '$utils/Store';
 	import Icon from './Icon.svelte';
 	import InfoSpaceBetween from './InfoSpaceBetween.svelte';
 	import type { V2ProjectContextType } from '$juicebox/models/project-type';
 
 	const project = getContext('PROJECT') as Store<V2ProjectContextType>;
-
-	export let loading: boolean = false;
 
 	interface urlParams {
 		utm_content: string;
@@ -40,21 +39,25 @@
 	});
 </script>
 
-<section class="rowLeft">
-	{#if urlParamsComing.utm_source === 'AMPLIFI'}
+{#if urlParamsComing.utm_source === 'AMPLIFI'}
+	<section class="rowLeft">
 		<div class="border">
 			<header>
 				<InfoSpaceBetween>
-					<h2 slot="left" class="linearText">You got AMPed!</h2>
-					<p>You came here via an AmpliFi Link!</p>
+					<h2 slot="left" class="linearText">You got AMPed</h2>
 				</InfoSpaceBetween>
+				<div class="row alignCenter byAdress">
+					<p>by</p>
+					<EnsOrAddress address={urlParamsComing.utm_content} showTooltip={false} />
+				</div>
+
+				<p>You came here via an AmpliFi Link!</p>
 			</header>
 			<div class="row">
 				<div class="incentivesWrapper noBorder">
 					<div>For every ETH contribution you get</div>
 					<div class="row flexEnd">
 						<div class="infoContainer referred">
-							<!-- this Icon has to be an amp svg -->
 							<Icon name="amplifi" />
 							<div>2.5% in $AMP</div>
 						</div>
@@ -65,27 +68,24 @@
 						>
 							Learn more
 						</a>
-						<!-- <div>AND</div>
-				<div class="infoContainer">
-					<Icon name="amplifi" />
-					<div>matching $AMP</div>
-				</div> -->
 					</div>
 				</div>
 			</div>
 		</div>
-	{:else}
+	</section>
+{:else}
+	<section>
 		<div class="border">
 			<header>
 				<InfoSpaceBetween>
-					<h4 slot="left">Join Amplifi Referral Program</h4>
+					<h4 slot="left">Join AmpliFi Referral Program</h4>
 					<div slot="right">
 						<a
 							href="https://amplifi.cre8r.vip/#/campaigns/amplifi/amplifi-juicebox"
 							target="_blank"
 							rel="noreferrer noopenerrer"
 						>
-							Become an Amplifi affiliate
+							Become an AmpliFi affiliate
 						</a>
 					</div>
 				</InfoSpaceBetween>
@@ -119,8 +119,8 @@
 				</div>
 			</div>
 		</div>
-	{/if}
-</section>
+	</section>
+{/if}
 
 <style>
 	section {
@@ -135,7 +135,7 @@
 	a {
 		font-size: 14px;
 		text-decoration: none;
-		border-bottom: 3px solid #6922FF;
+		border-bottom: 3px solid #6922ff;
 		transition: border-bottom 0.3s ease-in-out;
 	}
 
@@ -186,6 +186,15 @@
 		align-items: center;
 	}
 
+	.byAdress {
+		margin-top: -0.6rem;
+		margin-bottom: 0.5rem;
+		color: #a09797;
+	}
+
+	div.byAdress p {
+		margin: 0;
+	}
 	.flexEnd {
 		align-items: flex-end;
 	}
