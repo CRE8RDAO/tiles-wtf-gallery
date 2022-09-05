@@ -78,14 +78,14 @@
 		<div class="border">
 			<header>
 				<InfoSpaceBetween>
-					<h4 slot="left">Join Amplifi Referral Program</h4>
+					<h4 slot="left">Join AmpliFi Referral Program</h4>
 					<div slot="right">
 						<a
 							href="https://amplifi.cre8r.vip/#/campaigns/amplifi/amplifi-juicebox"
 							target="_blank"
 							rel="noreferrer noopenerrer"
 						>
-							Become an Amplifi affiliate
+							Become an AmpliFi Affiliate
 						</a>
 					</div>
 				</InfoSpaceBetween>
