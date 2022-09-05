@@ -135,7 +135,7 @@
 	a {
 		font-size: 14px;
 		text-decoration: none;
-		border-bottom: 3px solid #ff3700;
+		border-bottom: 3px solid #6922FF;
 		transition: border-bottom 0.3s ease-in-out;
 	}
 

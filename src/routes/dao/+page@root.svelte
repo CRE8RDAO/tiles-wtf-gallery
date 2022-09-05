@@ -503,8 +503,6 @@
 	{/if}
 </svelte:head>
 
-<br />
-<br />
 
 <section>
 	<div class="content">

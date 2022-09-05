@@ -114,7 +114,7 @@
 			color: black;
 			text-decoration: none;
 			position: relative;
-			border-bottom: 3px solid #ff3700;
+			border-bottom: 3px solid #6922FF;
 			margin: 0px 10px;
 		}
 
