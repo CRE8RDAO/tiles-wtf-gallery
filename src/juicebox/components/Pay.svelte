@@ -104,7 +104,7 @@
 
 	onMount(async () => {
 		if (payButton === '') {
-			payButton = 'GET $AMP';
+			payButton = 'GET $AGG';
 		}
 		converter = await getCurrencyConverter();
 

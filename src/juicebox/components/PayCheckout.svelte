@@ -128,10 +128,10 @@
 </script>
 
 <main>
-	<h3><Trans>Get $AMP</Trans></h3>
+	<h3><Trans>Get $AGG</Trans></h3>
 	{#if riskCount}
 		<InfoBox>
-			Getting $AMP is an investment — it's your way to become an early supporter of the project and
+			Getting $AGG is an investment — it's your way to become an early supporter of the project and
 			earn with it.
 		</InfoBox>
 	{/if}

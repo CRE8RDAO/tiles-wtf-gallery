@@ -64,7 +64,7 @@
 					<div class="row flexEnd">
 						<div class="infoContainer referred">
 							<Icon name="amplifi" />
-							<div>2.5% in $AMP</div>
+							<div>2.5% in $AGG</div>
 						</div>
 						<a
 							href="https://amplifi.cre8r.vip/#/campaigns/amplifi/amplifi-juicebox"
