@@ -81,7 +81,7 @@
 				break;
 		}
 		let where: WhereConfig<'projectEvent'>[] = [
-			{ key: 'cv', value: '2' },
+			{ key: 'pv', value: '2' },
 			{ key: 'projectId', value: $project.projectId.toNumber() }
 		];
 		if (filter) {

@@ -46,7 +46,7 @@ const keys: (keyof Project)[] = [
 	'currentBalance',
 	'totalPaid',
 	'totalRedeemed',
-	'cv'
+	'pv'
 ];
 
 const queryOpts = (
@@ -57,7 +57,7 @@ const queryOpts = (
 > => {
 	const where: WhereConfig<'project'>[] = [
 		{
-			key: 'cv',
+			key: 'pv',
 			value: '2'
 		}
 	];
@@ -177,7 +177,7 @@ export async function getProjectsFromIds(ids: string[]) {
 				operator: 'in'
 			},
 			{
-				key: 'cv',
+				key: 'pv',
 				value: '2',
 				operator: 'contains'
 			}
@@ -200,12 +200,12 @@ export async function useProjectsSearch<K extends EntityKeys<'projectSearch'>>({
 			keys: keys,
 			where: [
 				{
-					key: 'cv',
+					key: 'pv',
 					value: '2'
 				}
 			]
 		})
-	).filter((project) => project.cv === '2');
+	).filter((project) => project.pv === '2');
 }
 
 export async function trendingProjectsQuery(count: number, trendingWindowDays: number) {
@@ -233,7 +233,7 @@ export async function myProjectsQuery(wallet: string | undefined) {
 							value: [wallet]
 						},
 						{
-							key: 'cv',
+							key: 'pv',
 							value: '2'
 						}
 					]
@@ -260,7 +260,7 @@ export async function holdingsProjectsQuery(wallet: string | undefined) {
 						],
 						where: [
 							{
-								key: 'cv',
+								key: 'pv',
 								value: '2'
 							},
 							{

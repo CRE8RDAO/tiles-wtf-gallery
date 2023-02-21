@@ -48,7 +48,7 @@
 					value: $project.projectId.toNumber()
 				},
 				{
-					key: 'cv',
+					key: 'pv',
 					value: '2'
 				},
 				{

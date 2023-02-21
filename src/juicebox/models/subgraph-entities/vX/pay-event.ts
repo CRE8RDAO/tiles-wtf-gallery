@@ -16,7 +16,7 @@ export interface PayEvent extends BaseProjectEntity, BaseEventEntity {
 	beneficiary: string;
 	amount: BigNumber;
 	note: string;
-	cv: string;
+	pv: string;
 }
 
 export type PayEventJson = Partial<

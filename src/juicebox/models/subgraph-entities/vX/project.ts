@@ -54,7 +54,7 @@ type BaseProject = {
 export type ProjectV2 = {
 	metadataUri: string;
 	metadataDomain: BigNumber;
-	cv: '2';
+	pv: '2';
 } & BaseProject;
 
 export type Project = ProjectV2; // Separate entity used for testing
@@ -74,7 +74,7 @@ export type ProjectJson = Partial<
 			| 'deployedERC20Events'
 			| 'distributeToPayoutModEvents'
 			| 'distributeToTicketModEvents'
-			| 'cv'
+			| 'pv'
 		>,
 		string
 	> & {
@@ -87,7 +87,7 @@ export type ProjectJson = Partial<
 		deployedERC20Events: DeployedERC20EventJson[];
 		distributeToPayoutModEvents: DistributeToPayoutModEventJson[];
 		distributeToTicketModEvents: DistributeToTicketModEventJson[];
-		cv: '2';
+		pv: '2';
 	}
 >;
 
@@ -108,7 +108,7 @@ export const parseProjectJson = (project: ProjectJson): Partial<Project> => ({
 		project.distributeToPayoutModEvents?.map(parseDistributeToPayoutModEvent) ?? undefined,
 	distributeToTicketModEvents:
 		project.distributeToTicketModEvents?.map(parseDistributeToTicketModEvent) ?? undefined,
-	cv: project.cv ?? '2'
+	pv: project.pv ?? '2'
 });
 
 export type TrendingProject = Pick<

@@ -81,7 +81,7 @@
 				blockRefs,
 				showGraph,
 				projectId,
-				cv: '2'
+				pv: '2'
 			});
 
 			if (showGraph === 'balance') {

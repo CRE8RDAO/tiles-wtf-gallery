@@ -63,7 +63,7 @@ import {
 } from '../v2/deploy-eth-erc20-project-payer-event';
 
 export type ProjectEvent = {
-	cv: string;
+	pv: string;
 
 	id: string;
 	timestamp: number;
@@ -96,7 +96,7 @@ export type ProjectEventJson = Pick<
 	ProjectEvent,
 	'id' | 'timestamp' | 'projectId' | 'project' // primitive types
 > & {
-	cv: string;
+	pv: string;
 	payEvent: PayEventJson | null;
 	mintTokensEvent: MintTokensEventJson | null;
 	redeemEvent: RedeemEventJson | null;

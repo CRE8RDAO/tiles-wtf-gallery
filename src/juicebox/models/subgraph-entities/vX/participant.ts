@@ -7,7 +7,7 @@ import {
 } from '$juicebox/models/subgraph-entities/base/base-project-entity';
 
 export interface Participant extends BaseProjectEntity {
-	cv: string;
+	pv: string;
 	wallet: string;
 	totalPaid: BigNumber;
 	balance: BigNumber;
