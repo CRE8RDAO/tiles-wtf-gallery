@@ -209,7 +209,7 @@
 </main>
 <div class="right buttons">
 	<Button on:click={close} type="secondary" size="md">Close</Button>
-	<Button on:click={payProjectAndSayThanks} type="primary" size="md">GET $AMP</Button>
+	<Button on:click={payProjectAndSayThanks} type="primary" size="md">GET $AGG</Button>
 </div>
 
 <style>

@@ -17,21 +17,25 @@
 		</h1>
 		<p>We're building the web3 clickbank minus the dick pills.</p>
 		<p>
-			Our fundraise has it's own referral program using AmpliFI. You can earn $ETH + $veAMP for
+			Our fundraise has it's own referral program using AmpliFI. You can earn $ETH + $LAGG for
 			helping us spread the word.
 		</p>
 		<a href="https://amplifi.cre8r.vip/#/campaigns/AMPLIFI/amplifi-juicebox"
 			>AmpliFi Fundraiser Referral Program</a
 		>
 	</section>
-	<div class="socialIcons" target="_blank">
-		<a href="https://twitter.com/AmpliFiDAO">
+	<div class="socialIcons">
+		<a href="https://twitter.com/AmpliFiDAO" target="_blank" rel="noreferrer noopener">
 			<Icon name="twitter" />
 		</a>
-		<a href="https://discord.gg/KumYdmRw" target="_blank">
+		<a href="https://discord.gg/KumYdmRw" target="_blank" rel="noreferrer noopener">
 			<Icon name="discord" />
 		</a>
-		<a href="https://github.com/CRE8RDAO/amplifi-interface" target="_blank">
+		<a
+			href="https://github.com/CRE8RDAO/amplifi-interface"
+			target="_blank"
+			rel="noreferrer noopener"
+		>
 			<Icon name="github" style="width: 1rem" />
 		</a>
 	</div>
@@ -59,7 +63,7 @@
 			color: black;
 			text-decoration: none;
 			position: relative;
-			border-bottom: 3px solid #6922FF;
+			border-bottom: 3px solid #6922ff;
 			margin: 0px 10px;
 		}
 
